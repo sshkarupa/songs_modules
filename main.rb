@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'sinatra/flash'
 require 'slim'
 require 'sass'
 require './song.rb'
@@ -17,6 +18,26 @@ configure do
   set :username, 'frank'
   set :password, 'sinatra'
 end
+
+helpers do
+  def css(*stylesheets)
+    stylesheets.map do |stylesheet|
+      "<link rel=\"stylesheet\" href=\"/#{stylesheet}.css\" media=\"all\" />"
+    end.join
+  end
+
+  def current?(path='/')
+    (request.path==path || request.path==path+'/') ? "current" : nil
+  end
+
+  def set_title
+    @title ||= "Songs By Sinatra"
+  end
+end
+
+# before do
+#   set_title
+# end
 
 get '/login' do
   slim :login

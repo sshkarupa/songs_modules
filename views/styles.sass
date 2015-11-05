@@ -40,6 +40,8 @@ header h1
 nav
   @include tabs ($background: $black, $color: $white)
   font-weight: bold
+  a.current
+    background: lighten($black, 5%)
 
 p
   font: 13px/1.4 $main-font
@@ -55,3 +57,12 @@ lable
   display: block
   margin-top: 10px
   padding: 5px
+
+.flash
+  width: 600px
+  padding: 5px
+  font-weight: bold
+  margin: 20px 0
+  background: lighten($red, 60%)
+  color: $red
+  border: 1px solid $red
