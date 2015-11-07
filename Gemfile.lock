@@ -24,8 +24,13 @@ GEM
     do_sqlite3 (0.10.16)
       data_objects (= 0.10.16)
     eventmachine (1.0.8)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mime-types (2.6.2)
     multi_json (1.11.2)
     pg (0.18.3)
+    pony (1.11)
+      mail (>= 2.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -66,6 +71,7 @@ DEPENDENCIES
   dm-postgres-adapter
   dm-sqlite-adapter
   pg
+  pony
   sass
   sinatra
   sinatra-flash

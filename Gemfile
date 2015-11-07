@@ -11,6 +11,7 @@ gem 'thin'
 group :development do
   gem 'sinatra-reloader'
   gem 'dm-sqlite-adapter'
+  gem 'pony'
 end
 
 group :production do
