@@ -4,6 +4,7 @@ require 'sinatra/flash'
 require 'slim'
 require 'sass'
 require 'pony'
+require './sinatra/auth'
 require './song.rb'
 
 configure :development do
@@ -23,9 +24,8 @@ configure :production do
 end
 
 configure do
-  enable :sessions
-  set :username, 'frank'
-  set :password, 'sinatra'
+  set :username, 'sergey'
+  set :password, 'secret'
 end
 
 helpers do
@@ -62,26 +62,8 @@ helpers do
   end
 end
 
-# before do
-#   set_title
-# end
-
-get '/login' do
-  slim :login
-end
-
-post '/login' do
-  if params[:username] == settings.username && params[:password] == settings.password
-    session[:admin] = true
-    redirect to('/songs')
-  else
-    slim :login
-  end
-end
-
-get '/logout' do
-  session.clear
-  redirect to('/login')
+before do
+  set_title
 end
 
 get('/styles.css'){ sass :styles, style: :compressed }
