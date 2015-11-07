@@ -7,6 +7,8 @@ gem 'sass'
 gem 'dm-core'
 gem 'dm-migrations'
 gem 'thin'
+gem 'coffee-script'
+gem 'therubyracer'
 
 group :development do
   gem 'sinatra-reloader'
