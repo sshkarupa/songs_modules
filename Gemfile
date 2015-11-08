@@ -9,11 +9,11 @@ gem 'dm-migrations'
 gem 'thin'
 gem 'coffee-script'
 gem 'therubyracer'
+gem 'pony'
 
 group :development do
   gem 'sinatra-reloader'
   gem 'dm-sqlite-adapter'
-  gem 'pony'
 end
 
 group :production do
